@@ -1,0 +1,109 @@
+@import "./mixins";
+
+.header {
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 0 16px;
+
+  nav {
+    display: flex;
+    margin: auto;
+    animation: menu-in 1s ease;
+
+    ul {
+      list-style-type: none;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      padding: 0;
+      margin: 0;
+
+      @include tablet-and-above {
+        flex-direction: row;
+        gap: 40px;
+      }
+
+      a {
+        text-decoration: none;
+        color: #4e4b66;
+      }
+
+      a:hover {
+        color: $future-orange;
+      }
+
+      .active {
+        border-bottom: 2px solid $future-orange;
+        color: $future-orange;
+      }
+    }
+  }
+
+  .btn {
+    background-color: unset;
+    border: 1px solid $future-orange;
+    border-radius: 24px;
+    height: 56px;
+    color: $future-orange;
+    font-weight: 700;
+    padding: 18px 48px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.5s ease;
+
+    &:hover {
+      background-color: $future-orange;
+      color: white;
+    }
+
+    &:active {
+      transform: scale(0.95);
+    }
+  }
+
+  @include tablet-and-above {
+    flex-direction: row;
+    justify-content: space-between;
+    width: -webkit-fill-available;
+    height: 120px;
+    align-items: center;
+    margin-top: 0;
+  }
+
+  @media (min-width: 1920px) {
+    padding: 0;
+  }
+}
+
+.roll-in-blurred-animation {
+  animation: roll-in-blurred-left 2s cubic-bezier(0.23, 1, 0.32, 1) both;
+}
+
+@keyframes roll-in-blurred-left {
+  0% {
+    -webkit-transform: translateX(-1000px) rotate(-720deg);
+    transform: translateX(-1000px) rotate(-720deg);
+    -webkit-filter: blur(50px);
+    filter: blur(50px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0) rotate(0deg);
+    transform: translateX(0) rotate(0deg);
+    -webkit-filter: blur(0);
+    filter: blur(0);
+    opacity: 1;
+  }
+}
+
+@keyframes menu-in {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}

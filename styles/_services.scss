@@ -1,0 +1,78 @@
+.service-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+
+  @include tablet-and-above {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .service-card {
+    border-radius: 20px;
+    background-color: #f7f7f7;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 24px;
+    transform: rotate(0deg);
+    animation: rotate-little-in 0.5s ease;
+
+    @include tablet-and-above {
+      flex-grow: 0;
+      align-items: flex-start;
+      padding: 32px;
+    }
+
+    &:hover {
+      transform: rotate(10deg);
+      animation: rotate-little-out 0.5s ease;
+    }
+
+    h3 {
+      color: #1a1a1a;
+      font-size: 20px;
+
+      @include tablet-and-above {
+        font-size: 24px;
+      }
+    }
+
+    &-text {
+      font-size: 14px;
+      text-align: center;
+
+      @include tablet-and-above {
+        text-align: left;
+        font-size: 16px;
+      }
+    }
+
+    &-icon {
+      width: 40px;
+      height: 40px;
+    }
+  }
+}
+
+@keyframes rotate-little-in {
+  from {
+    transform: rotate(10deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes rotate-little-out {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(10deg);
+  }
+}
