@@ -7,10 +7,30 @@
   gap: 30px;
   padding: 0 16px;
 
-  nav {
-    display: flex;
+  .menu-icon {
+    display: block;
+    width: 56px;
+    height: 56px;
+    margin: auto;
+    cursor: pointer;
+
+    @include tablet-and-above {
+      display: none;
+    }
+  }
+
+  .navigation {
+    display: none;
     margin: auto;
     animation: menu-in 1s ease;
+
+    &.active {
+      display: block;
+    }
+
+    @include tablet-and-above {
+      display: flex;
+    }
 
     ul {
       list-style-type: none;
