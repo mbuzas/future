@@ -82,6 +82,11 @@
     &:active {
       transform: scale(0.95);
     }
+
+    &.active {
+      background-color: $future-orange;
+      color: white;
+    }
   }
 
   @include tablet-and-above {

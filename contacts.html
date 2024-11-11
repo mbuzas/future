@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Future | Contacts</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <img src="assets/logo.svg" alt="logo" class="roll-in-blurred-animation" />
+      <nav class="navigation">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="">Services</a></li>
+          <li><a href="">Properties</a></li>
+          <li><a href="">Team</a></li>
+        </ul>
+      </nav>
+      <img src="assets/menu.svg" alt="menu" class="menu-icon" />
+      <a href="contacts.html"><button class="btn active">Contact Us</button></a>
+    </header>
+    <main>
+      <section class="hero">
+        <h1>Contact us</h1>
+        <div class="hero-content">
+          <p class="hero-text">
+            We are here to help you with all your construction needs. Please
+            fill out the form below and we will get back to you as soon as
+            possible.
+          </p>
+        </div>
+      </section>
+      <form
+        id="contact-form"
+        action="https://formspree.io/f/xvgorkev"
+        method="POST"
+      >
+        <label>
+          Your email:
+          <input type="email" name="email" />
+        </label>
+        <label>
+          Your message:
+          <textarea name="message"></textarea>
+        </label>
+        <button type="submit">Send</button>
+      </form>
+      <div class="announcement">
+        <h2>We successfully received your message! 🎉</h2>
+      </div>
+    </main>
+    <script src="./script.js"></script>
+    <script src="./contacts.js"></script>
+  </body>
+</html>

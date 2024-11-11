@@ -75,6 +75,10 @@
 .header .btn:active {
   transform: scale(0.95);
 }
+.header .btn.active {
+  background-color: #f15a24;
+  color: white;
+}
 @media (min-width: 768px) {
   .header {
     flex-direction: row;
@@ -204,6 +208,49 @@
     background-color: #f15a24;
   }
 }
+#contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  justify-content: center;
+}
+@media (min-width: 768px) {
+  #contact-form {
+    width: 600px;
+    margin: auto;
+  }
+}
+#contact-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+#contact-form input,
+#contact-form textarea {
+  padding: 8px 16px;
+  border: 1px solid #f15a24;
+  border-radius: 4px;
+}
+#contact-form button {
+  background-color: #f15a24;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+#contact-form button:hover {
+  background-color: #d4420e;
+}
+
+.announcement {
+  display: none;
+}
+.announcement h2 {
+  text-align: center;
+}
+
 .service-list {
   display: grid;
   grid-template-columns: 1fr;
